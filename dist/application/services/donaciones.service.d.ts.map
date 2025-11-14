@@ -1,0 +1,1 @@
+{"version":3,"file":"donaciones.service.d.ts","sourceRoot":"","sources":["../../../src/application/services/donaciones.service.ts"],"names":[],"mappings":"AACA,OAAO,EAAY,KAAK,OAAO,EAAE,KAAK,QAAQ,EAAE,MAAM,SAAS,CAAC;AAIhE,qBAAa,iBAAiB;qBACL,aAAa,CAAC,OAAO,EAAE,OAAO,EAAE,GAAG,EAAE,QAAQ;qBAqB7C,gBAAgB,CAAC,OAAO,EAAE,OAAO,EAAE,GAAG,EAAE,QAAQ;CASxE"}

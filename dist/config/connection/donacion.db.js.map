@@ -1,0 +1,1 @@
+{"version":3,"file":"donacion.db.js","sourceRoot":"","sources":["../../../src/config/connection/donacion.db.ts"],"names":[],"mappings":"AAAA,MAAe,UAAU;IACvB;QACE,IAAI,GAAG,CAAC,MAAM,KAAK,UAAU,EAAE,CAAC;YAC9B,MAAM,IAAI,KAAK,CAAC,2CAA2C,CAAC,CAAC;QAC/D,CAAC;IACH,CAAC;IACD,SAAS,KAAU,CAAC;IAAA,CAAC;CACtB;AAED,eAAe,UAAU,CAAC"}

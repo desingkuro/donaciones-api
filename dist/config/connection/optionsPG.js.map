@@ -1,0 +1,1 @@
+{"version":3,"file":"optionsPG.js","sourceRoot":"","sources":["../../../src/config/connection/optionsPG.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,YAAY,CAAC;AACnC,OAAO,EAAE,cAAc,EAAgB,MAAM,gBAAgB,CAAC;AAE9D,MAAM,CAAC,MAAM,SAAS,GAAoC;IACxD,OAAO,CAAC,CAAC;QACP,cAAc,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC;IACzB,CAAC;CACF,CAAC"}
