@@ -1,1 +1,1 @@
-{"version":3,"file":"sql_accesos.d.ts","sourceRoot":"","sources":["../../../src/domain/repositories/sql_accesos.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,WAAW;;;;;;;;CAQvB,CAAC"}
+{"version":3,"file":"sql_accesos.d.ts","sourceRoot":"","sources":["../../../src/domain/repositories/sql_accesos.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,WAAW;;;;;;CAqCvB,CAAC"}

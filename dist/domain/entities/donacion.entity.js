@@ -6,8 +6,8 @@ class Donacion {
     _fechaCreacion;
     _state;
     _checker;
-    constructor({ idDonacion, idTipoDonacion, idDonador, idCampania = null, fechaCreacion = new Date().toISOString(), state = 'Pendiente', checker = 0 }) {
-        this._idDonacion = idDonacion;
+    constructor({ idDonacion, idTipoDonacion, idDonador, idCampania = null, fechaCreacion = new Date().toISOString(), state, checker }) {
+        this._idDonacion = idDonacion || 0;
         this._idTipoDonacion = idTipoDonacion;
         this._idDonador = idDonador;
         this._idCampania = idCampania;

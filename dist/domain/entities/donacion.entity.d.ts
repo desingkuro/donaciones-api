@@ -1,14 +1,14 @@
 interface DonacionProps {
-    idDonacion: string;
-    idTipoDonacion: number | string;
+    idDonacion?: number;
+    idTipoDonacion: number;
     idDonador: number;
     idCampania?: number | null;
     fechaCreacion?: string;
-    state?: string;
-    checker?: number;
+    state: string;
+    checker: number;
 }
 declare class Donacion {
-    private _idDonacion;
+    private _idDonacion?;
     private _idTipoDonacion;
     private _idDonador;
     private _idCampania;
@@ -16,8 +16,8 @@ declare class Donacion {
     private _state;
     private _checker;
     constructor({ idDonacion, idTipoDonacion, idDonador, idCampania, fechaCreacion, state, checker }: DonacionProps);
-    get idDonacion(): string;
-    get idTipoDonacion(): string | number;
+    get idDonacion(): number | undefined;
+    get idTipoDonacion(): number;
     get idDonador(): number;
     get idCampania(): number | null;
     get fechaCreacion(): string;

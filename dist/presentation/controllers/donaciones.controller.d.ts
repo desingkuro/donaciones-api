@@ -3,6 +3,8 @@ import { DonacionesService } from "../../application/services/donaciones.service
 declare class DonacionesController extends DonacionesService {
     create(req: Request, res: Response): void;
     list(req: Request, res: Response): void;
+    delete(req: Request, res: Response): Response<any, Record<string, any>> | undefined;
+    get(req: Request, res: Response): Response<any, Record<string, any>> | undefined;
 }
 declare const donacionesController: DonacionesController;
 export default donacionesController;

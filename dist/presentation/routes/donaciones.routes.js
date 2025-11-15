@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import donacionesController from '../controllers/donaciones.controller.js';
-import { donacionesCreateValidator } from '../validators/donacion.validator.js';
+import { donacionesCreateValidator, donacionesDeleteValidator } from '../validators/donacion.validator.js';
 class RouterDonaciones {
     rutaApi;
     constructor() {
@@ -10,9 +10,9 @@ class RouterDonaciones {
     configurarRutas() {
         this.rutaApi.post('/', donacionesCreateValidator, donacionesController.create);
         this.rutaApi.get('/', donacionesController.list);
-        //this.rutaApi.get('/donaciones/:id', donacionesController.get);
+        this.rutaApi.delete('/:id', donacionesDeleteValidator, donacionesController.delete);
+        this.rutaApi.get('/:id', donacionesController.get);
         //this.rutaApi.put('/donaciones/:id', donacionesController.update);
-        //this.rutaApi.delete('/donaciones/:id', donacionesController.delete);
     }
 }
 const routerDonaciones = new RouterDonaciones();

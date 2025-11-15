@@ -1,6 +1,6 @@
 export interface DonacionesDtoInterface {
-    idDonacion: string;
-    idTipoDonacion: number | string;
+    idDonacion?: number;
+    idTipoDonacion: number;
     idDonador: number;
     idCampania: number | null;
     fechaCreacion: string;
@@ -8,8 +8,8 @@ export interface DonacionesDtoInterface {
     checker: number;
 }
 declare class DonacionesDTO implements DonacionesDtoInterface {
-    idDonacion: string;
-    idTipoDonacion: number | string;
+    idDonacion: number;
+    idTipoDonacion: number;
     idDonador: number;
     idCampania: number | null;
     fechaCreacion: string;

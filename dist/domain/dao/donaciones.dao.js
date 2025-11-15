@@ -36,7 +36,7 @@ export class DonacionesSQLStructure {
     }
     async delete(id) {
         const result = await pool.query(sql_accesos.delete, [id]);
-        return result.rowCount > 0;
+        return result;
     }
 }
 //# sourceMappingURL=donaciones.dao.js.map

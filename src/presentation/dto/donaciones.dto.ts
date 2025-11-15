@@ -1,6 +1,6 @@
 export interface DonacionesDtoInterface{
-    idDonacion: string;
-    idTipoDonacion: number | string;
+    idDonacion?: number;
+    idTipoDonacion: number;
     idDonador: number;
     idCampania: number | null;
     fechaCreacion: string;
@@ -9,8 +9,8 @@ export interface DonacionesDtoInterface{
 }
 
 class DonacionesDTO implements DonacionesDtoInterface {
-    idDonacion: string;
-    idTipoDonacion: number | string;
+    idDonacion: number;
+    idTipoDonacion: number;
     idDonador: number;
     idCampania: number | null;
     fechaCreacion: string;
@@ -26,7 +26,7 @@ class DonacionesDTO implements DonacionesDtoInterface {
         state,
         checker}:DonacionesDtoInterface
     ) {
-        this.idDonacion = idDonacion;
+        this.idDonacion = idDonacion || 0;
         this.idTipoDonacion = idTipoDonacion;
         this.idDonador = idDonador;
         this.idCampania = idCampania;

@@ -1,16 +1,16 @@
 interface DonacionProps {
-  idDonacion: string;
-  idTipoDonacion: number | string;
+  idDonacion?: number;
+  idTipoDonacion: number;
   idDonador: number;
   idCampania?: number | null;
   fechaCreacion?: string;
-  state?: string;
-  checker?: number;
+  state: string;
+  checker: number;
 }
 
 class Donacion {
-  private _idDonacion: string;
-  private _idTipoDonacion: number | string;
+  private _idDonacion?: number;
+  private _idTipoDonacion: number;
   private _idDonador: number;
   private _idCampania: number | null;
   private _fechaCreacion: string;
@@ -23,11 +23,11 @@ class Donacion {
     idDonador,
     idCampania = null,
     fechaCreacion = new Date().toISOString(),
-    state = 'Pendiente',
-    checker = 0
+    state,
+    checker
   }: DonacionProps) {
 
-    this._idDonacion = idDonacion;
+    this._idDonacion = idDonacion || 0;
     this._idTipoDonacion = idTipoDonacion;
     this._idDonador = idDonador;
     this._idCampania = idCampania;

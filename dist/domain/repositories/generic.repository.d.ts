@@ -4,8 +4,8 @@ export declare class GenericRepository<T> {
     constructor(structure: IDataStructure<T>);
     create(item: T): Promise<T>;
     findAll(): Promise<T[]>;
-    findById(id: string | number): Promise<T | null>;
+    findById(id: string | number): Promise<T[] | null>;
     update(id: string | number, item: Partial<T>): Promise<T>;
-    delete(id: string | number): Promise<boolean>;
+    delete(id: string | number): Promise<T[]>;
 }
 //# sourceMappingURL=generic.repository.d.ts.map

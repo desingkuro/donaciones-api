@@ -5,6 +5,6 @@ export declare class DonacionesSQLStructure implements IDataStructure<Donacion> 
     findAll(): Promise<any>;
     findById(id: string | number): Promise<any>;
     update(id: string | number, partial: Partial<Donacion>): Promise<any>;
-    delete(id: string | number): Promise<boolean>;
+    delete(id: string | number): Promise<any>;
 }
 //# sourceMappingURL=donaciones.dao.d.ts.map

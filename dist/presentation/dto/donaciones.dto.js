@@ -7,7 +7,7 @@ class DonacionesDTO {
     state;
     checker;
     constructor({ idDonacion, idTipoDonacion, idDonador, idCampania, fechaCreacion, state, checker }) {
-        this.idDonacion = idDonacion;
+        this.idDonacion = idDonacion || 0;
         this.idTipoDonacion = idTipoDonacion;
         this.idDonador = idDonador;
         this.idCampania = idCampania;
