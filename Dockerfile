@@ -17,6 +17,8 @@
     
     # Compilar el proyecto
     RUN npm run build
+
+    RUN npm run start
     
     # ----------------------
     # Etapa 2: Runtime
