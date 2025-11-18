@@ -1,46 +1,36 @@
 # ----------------------
 # Etapa 1: Build
 # ----------------------
-    FROM node:20-alpine AS builder
+FROM node:20-alpine AS builder
 
-    # Crear directorio de la app
-    WORKDIR /usr/src/app
-    
-    # Copiar package.json y package-lock.json primero para aprovechar cache
-    COPY package*.json ./
-    
-    # Instalar dependencias
-    RUN npm install
-    
-    # Copiar el resto del código
-    COPY . .
-    
-    # Compilar el proyecto
-    RUN npm run build
+WORKDIR /usr/src/app
 
-    RUN npm run start
-    
-    # ----------------------
-    # Etapa 2: Runtime
-    # ----------------------
-    FROM node:20-alpine
-    
-    # Crear directorio de la app
-    WORKDIR /usr/src/app
-    
-    # Copiar solo dependencias necesarias (sin devDependencies)
-    COPY package*.json ./
-    RUN npm install --omit=dev
-    
-    # Copiar compilados desde el builder
-    COPY --from=builder /usr/src/app/dist ./dist
-    
-    # Copiar archivos de configuración necesarios (.env si lo usas)
-    #COPY --from=builder /usr/src/app/.env ./
-    
-    # Exponer el puerto de NestJS (por defecto 3000)
-    EXPOSE 3000
-    
-    # Comando de arranque
-    CMD ["node", "dist/main.js"]
-    
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+# IMPORTANTE: build sin watch
+RUN npm run build:prod
+
+# ----------------------
+# Etapa 2: Runtime
+# ----------------------
+FROM node:20-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+RUN npm install --omit=dev
+
+# Copiar solo el código compilado
+COPY --from=builder /usr/src/app/dist ./dist
+
+# Si necesitas algún otro archivo (por ejemplo, config JSON), lo copias aquí
+# COPY --from=builder /usr/src/app/.env ./
+
+# Usa el puerto real de tu API (parece que 4000, no 3000)
+EXPOSE 4000
+
+# Arranque en producción
+CMD ["node", "dist/index.js"]
