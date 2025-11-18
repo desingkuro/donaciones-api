@@ -13,7 +13,7 @@ pool
     console.log("Conectado a: " + dbConecction.database);
   })
   .catch((miError: any) => {
-    console.log(miError);
+    console.log(miError); 
   });
 
 export default pool;
