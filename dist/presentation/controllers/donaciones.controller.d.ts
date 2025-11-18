@@ -5,6 +5,7 @@ declare class DonacionesController extends DonacionesService {
     list(req: Request, res: Response): void;
     delete(req: Request, res: Response): Response<any, Record<string, any>> | undefined;
     get(req: Request, res: Response): Response<any, Record<string, any>> | undefined;
+    update(req: Request, res: Response): Response<any, Record<string, any>> | undefined;
 }
 declare const donacionesController: DonacionesController;
 export default donacionesController;

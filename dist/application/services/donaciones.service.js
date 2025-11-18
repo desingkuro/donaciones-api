@@ -63,5 +63,19 @@ export class DonacionesService {
             return res.status(500).json({ error: error?.message });
         }
     }
+    static async update(id, request, res) {
+        try {
+            const dao = new DonacionesRepository();
+            const donaciones = await dao.update(id, request.body);
+            if (!donaciones) {
+                return res.status(404).json({ error: 'Donacion no encontrada' });
+            }
+            return res.status(200).json({ message: 'Donacion actualizada correctamente', donaciones });
+        }
+        catch (error) {
+            console.log(error);
+            return res.status(500).json({ error: error?.message });
+        }
+    }
 }
 //# sourceMappingURL=donaciones.service.js.map

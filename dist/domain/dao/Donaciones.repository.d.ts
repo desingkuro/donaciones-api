@@ -6,5 +6,6 @@ export declare class DonacionesRepository extends GenericRepository<Donacion> {
     findAll(): Promise<Donacion[]>;
     delete(id: number): Promise<Donacion[]>;
     findById(id: number): Promise<Donacion[] | null>;
+    update(id: string | number, item: Partial<Donacion>): Promise<Donacion>;
 }
 //# sourceMappingURL=Donaciones.repository.d.ts.map

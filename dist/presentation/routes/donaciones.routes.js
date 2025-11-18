@@ -12,7 +12,7 @@ class RouterDonaciones {
         this.rutaApi.get('/', donacionesController.list);
         this.rutaApi.delete('/:id', donacionesDeleteValidator, donacionesController.delete);
         this.rutaApi.get('/:id', donacionesController.get);
-        //this.rutaApi.put('/donaciones/:id', donacionesController.update);
+        this.rutaApi.put('/:id', donacionesController.update);
     }
 }
 const routerDonaciones = new RouterDonaciones();

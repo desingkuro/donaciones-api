@@ -31,5 +31,11 @@ export class DonacionesRepository extends GenericRepository {
             return result;
         });
     }
+    async update(id, item) {
+        return await pool.task(async (consult) => {
+            const result = await consult.query(sql_accesos.update, [id, item.idTipoDonacion, item.idDonador, item.idCampania, item.fechaCreacion, item.state, item.checker]);
+            return result;
+        });
+    }
 }
 //# sourceMappingURL=Donaciones.repository.js.map

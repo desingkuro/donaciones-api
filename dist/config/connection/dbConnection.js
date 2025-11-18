@@ -1,17 +1,16 @@
-import dotenv from "dotenv";
 import pgPromise from "pg-promise";
 import { optionsPG } from "./optionsPG.js";
-import PostgresLocal from "./postgrestLocal.js";
+import NeonDatabase from "./neonDatabase.js";
 const pgp = pgPromise(optionsPG);
-const dbConecction = new PostgresLocal().connectDb();
+const dbConecction = new NeonDatabase().connectDb();
 const pool = pgp(dbConecction);
 pool
     .connect()
-    .then((mithen) => {
-    console.log("Conectado a: " + dbConecction.database);
+    .then(() => {
+    console.log("Conectado a: " + "NeonDatabase");
 })
     .catch((miError) => {
-    console.log(miError);
+    console.log('Error al conectar a la base de datos:', miError);
 });
 export default pool;
 //# sourceMappingURL=dbConnection.js.map
